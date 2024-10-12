@@ -46,71 +46,141 @@ class _FuncionState extends State<Funcion> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.pinkAccent.shade100,
-          title: Text("Operadores con funciones"),
+          backgroundColor: Colors.lightBlueAccent.shade100,
+          title: Text("Operaciones con funciones"),
         ),
-        body: Column(
-          children: [
-            Container(
-              width: double.infinity,
-              height: 250,
-              color: Colors.greenAccent.shade100,
-              child: Column(
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                const Color.fromARGB(255, 88, 164, 187),
+                const Color.fromARGB(134, 54, 64, 177)
+              ],
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+            ),
+          ),
+          child: Column(
+            children: [
+              Container(
+                padding: new EdgeInsets.all(10.0),
+                margin: EdgeInsets.all(10),
+                width: double.infinity,
+                height: 330,
+                color: Colors.greenAccent.shade100,
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      "Primer numero",
+                    ),
+                    TextField(
+                      controller: _num1,
+                      decoration: InputDecoration(
+                          hintText: "Ingrese un numero",
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: Colors.black, width: 2.4),
+                              borderRadius: BorderRadius.circular(20))),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      "Segundo numero",
+                      style: TextStyle(color: Colors.black, fontSize: 15),
+                    ),
+                    TextField(
+                      controller: _num2,
+                      decoration: InputDecoration(
+                          hintText: 'Ingrese un numero',
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: Colors.black, width: 2.4),
+                              borderRadius: BorderRadius.circular(20))),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text("Tercer numero"),
+                    TextField(
+                      controller: _resultado,
+                      decoration: InputDecoration(
+                          hintText: "Resultado",
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                color: Colors.black,
+                                width: 2.4,
+                              ),
+                              borderRadius: BorderRadius.circular(20))),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 50),
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  TextField(
-                    controller: _num1,
-                    decoration: InputDecoration(
-                        labelText: "Numero1",
-                        labelStyle: TextStyle(
-                          color: Colors.purple,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20))),
+                  Container(
+                    width: 125,
+                    height: 50,
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.orangeAccent.shade100),
+                        onPressed: sumar,
+                        child: Text(
+                          "sumar",
+                          style: TextStyle(color: Colors.black, fontSize: 15),
+                        )),
                   ),
-                  TextField(
-                    controller: _num2,
-                    decoration: InputDecoration(
-                        labelText: 'Numero2',
-                        labelStyle: TextStyle(
-                          color: Colors.purple,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20))),
-                  ),
-                  TextField(
-                    controller: _resultado,
-                    decoration: InputDecoration(
-                        labelText: "Resultado",
-                        labelStyle: TextStyle(
-                          color: Colors.purple,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20))),
-                  ),
+                  Container(
+                    width: 125,
+                    height: 50,
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.deepPurpleAccent.shade100),
+                        onPressed: restar,
+                        child: Text(
+                          "restar",
+                          style: TextStyle(color: Colors.black, fontSize: 15),
+                        )),
+                  )
                 ],
               ),
-            ),
-            SizedBox(height: 50),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(onPressed: null, child: Text("sumar")),
-                ElevatedButton(onPressed: null, child: Text("restar"))
-              ],
-            ),
-            SizedBox(height: 50),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(onPressed: null, child: Text("multiplicar")),
-                ElevatedButton(onPressed: null, child: Text("dividir"))
-              ],
-            )
-          ],
+              SizedBox(height: 50),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    width: 125,
+                    height: 50,
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.greenAccent.shade100),
+                        onPressed: multiplicar,
+                        child: Text(
+                          "multiplicar",
+                          style: TextStyle(color: Colors.black, fontSize: 15),
+                        )),
+                  ),
+                  Container(
+                    width: 125,
+                    height: 50,
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blueAccent.shade100),
+                        onPressed: dividir,
+                        child: Text(
+                          "dividir",
+                          style: TextStyle(color: Colors.black, fontSize: 15),
+                        )),
+                  )
+                ],
+              )
+            ],
+          ),
         ),
 
         // backgroundColor: Colors.blue.shade200,
