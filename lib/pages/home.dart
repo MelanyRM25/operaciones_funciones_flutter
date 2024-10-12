@@ -66,8 +66,9 @@ class _FuncionState extends State<Funcion> {
                 padding: new EdgeInsets.all(10.0),
                 margin: EdgeInsets.all(10),
                 width: double.infinity,
-                height: 330,
-                color: Colors.greenAccent.shade100,
+                height: 380,
+                color: const Color.fromARGB(255, 183, 235, 236),
+                //color: Colors.transparent,
                 child: Column(
                   children: [
                     SizedBox(
@@ -75,6 +76,10 @@ class _FuncionState extends State<Funcion> {
                     ),
                     Text(
                       "Primer numero",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 10,
                     ),
                     TextField(
                       controller: _num1,
@@ -90,7 +95,13 @@ class _FuncionState extends State<Funcion> {
                     ),
                     Text(
                       "Segundo numero",
-                      style: TextStyle(color: Colors.black, fontSize: 15),
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 10,
                     ),
                     TextField(
                       controller: _num2,
@@ -104,7 +115,16 @@ class _FuncionState extends State<Funcion> {
                     SizedBox(
                       height: 20,
                     ),
-                    Text("Tercer numero"),
+                    Text(
+                      "Resultado",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
                     TextField(
                       controller: _resultado,
                       decoration: InputDecoration(
@@ -119,7 +139,7 @@ class _FuncionState extends State<Funcion> {
                   ],
                 ),
               ),
-              SizedBox(height: 50),
+              SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
